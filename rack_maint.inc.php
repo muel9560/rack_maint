@@ -255,8 +255,8 @@ EOL;
     // Insert the new table into the window
     // Instantiate the xajaxResponse object
     $response = new xajaxResponse();
-    $response->addAssign("{$form['form_id']}_racks_count",  "innerHTML", "({$count})");
-    $response->addAssign("{$form['content_id']}", "innerHTML", $html);
+    $response->assign("{$form['form_id']}_racks_count",  "innerHTML", "({$count})");
+    $response->assign("{$form['content_id']}", "innerHTML", $html);
     // $response->addScript($js);
     return($response->getXML());
 }
@@ -1931,7 +1931,7 @@ EOL;
     // Insert the new html into the window
     // Instantiate the xajaxResponse object
     $response = new xajaxResponse();
-    $response->addAssign("rack_unit_info", "innerHTML", $html);
+    $response->assign("rack_unit_info", "innerHTML", $html);
     if ($js) { $response->addScript($js); }
     return($response->getXML());
 
@@ -2041,7 +2041,7 @@ function ws_display($window_name, $form='') {
         array_pop($_SESSION['ona']['work_space']['history']);
         $html .= "<br><center><font color=\"red\"><b>Rack doesn't exist!</b></font></center>";
         $response = new xajaxResponse();
-        $response->addAssign("work_space_content", "innerHTML", $html);
+        $response->assign("work_space_content", "innerHTML", $html);
         return($response->getXML());
     }
 
@@ -2461,7 +2461,7 @@ EOL;
     // Insert the new html into the window
     // Instantiate the xajaxResponse object
     $response = new xajaxResponse();
-    $response->addAssign("work_space_content", "innerHTML", $html);
+    $response->assign("work_space_content", "innerHTML", $html);
     if ($js) { $response->addScript($js); }
     return($response->getXML());
 }
