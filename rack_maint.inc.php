@@ -128,7 +128,7 @@ function ws_display_list($window_name, $form) {
     if (! (auth('rack_add') or auth('advanced'))){
         $response = new xajaxResponse();
         $response->addScript("alert('Permission denied!');");
-        return($response->getOutput());
+        return($response->printOutput());
     }
 
     // If the group supplied an array in a string, build the array and store it in $form
@@ -258,7 +258,7 @@ EOL;
     $response->assign("{$form['form_id']}_racks_count",  "innerHTML", "({$count})");
     $response->assign("{$form['content_id']}", "innerHTML", $html);
     // $response->addScript($js);
-    return($response->getOutput());
+    return($response->printOutput());
 }
 
 
@@ -1286,7 +1286,7 @@ function ws_rack_editor($window_name, $form='') {
     if (! (auth('rack_add') or auth('advanced'))){
         $response = new xajaxResponse();
         $response->addScript("alert('Permission denied!');");
-        return($response->getOutput());
+        return($response->printOutput());
     }
 
     // If the user supplied an array in a string, build the array and store it in $form
@@ -1469,7 +1469,7 @@ function ws_ru_editor($window_name, $form='') {
     if (! (auth('rack_add') or auth('advanced'))){
         $response = new xajaxResponse();
         $response->addScript("alert('Permission denied!');");
-        return($response->getOutput());
+        return($response->printOutput());
     }
 
     // If the user supplied an array in a string, build the array and store it in $form
@@ -1697,7 +1697,7 @@ function ws_rack_save($window_name, $form='') {
     if (! (auth('rack_add') or auth('advanced'))){
         $response = new xajaxResponse();
         $response->addScript("alert('Permission denied!');");
-        return($response->getOutput());
+        return($response->printOutput());
     }
 
     // Instantiate the xajaxResponse object
@@ -1734,7 +1734,7 @@ function ws_rack_save($window_name, $form='') {
 
     // Insert the new table into the window
     $response->addScript($js);
-    return($response->getOutput());
+    return($response->printOutput());
 }
 
 
@@ -1759,7 +1759,7 @@ function ws_save($window_name, $form='') {
     if (! (auth('rack_add') or auth('advanced'))){
         $response = new xajaxResponse();
         $response->addScript("alert('Permission denied!');");
-        return($response->getOutput());
+        return($response->printOutput());
     }
 
     // Instantiate the xajaxResponse object
@@ -1797,7 +1797,7 @@ function ws_save($window_name, $form='') {
 
     // Insert the new table into the window
     $response->addScript($js);
-    return($response->getOutput());
+    return($response->printOutput());
 }
 
 
@@ -1820,7 +1820,7 @@ function ws_rack_delete($window_name, $form='') {
     if (! (auth('rack_del') or auth('advanced'))){
         $response = new xajaxResponse();
         $response->addScript("alert('Permission denied!');");
-        return($response->getOutput());
+        return($response->printOutput());
     }
 
     // If an array in a string was provided, build the array and store it in $form
@@ -1844,7 +1844,7 @@ function ws_rack_delete($window_name, $form='') {
 
     // Return an XML response
     $response->addScript($js);
-    return($response->getOutput());
+    return($response->printOutput());
 }
 
 
@@ -1869,7 +1869,7 @@ function ws_delete($window_name, $form='') {
     if (! (auth('rack_del') or auth('advanced'))){
         $response = new xajaxResponse();
         $response->addScript("alert('Permission denied!');");
-        return($response->getOutput());
+        return($response->printOutput());
     }
 
     // If an array in a string was provided, build the array and store it in $form
@@ -1893,7 +1893,7 @@ function ws_delete($window_name, $form='') {
 
     // Return an XML response
     $response->addScript($js);
-    return($response->getOutput());
+    return($response->printOutput());
 }
 
 
@@ -1933,7 +1933,7 @@ EOL;
     $response = new xajaxResponse();
     $response->assign("rack_unit_info", "innerHTML", $html);
     if ($js) { $response->addScript($js); }
-    return($response->getOutput());
+    return($response->printOutput());
 
 }*/
 
@@ -2042,7 +2042,7 @@ function ws_display($window_name, $form='') {
         $html .= "<br><center><font color=\"red\"><b>Rack doesn't exist!</b></font></center>";
         $response = new xajaxResponse();
         $response->assign("work_space_content", "innerHTML", $html);
-        return($response->getOutput());
+        return($response->printOutput());
     }
 
     // get location info
@@ -2463,7 +2463,7 @@ EOL;
     $response = new xajaxResponse();
     $response->assign("work_space_content", "innerHTML", $html);
     if ($js) { $response->addScript($js); }
-    return($response->getOutput());
+    return($response->printOutput());
 }
 
 
